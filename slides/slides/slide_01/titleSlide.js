@@ -591,11 +591,13 @@ pt.titleSlide.move = function() {
 
 	//Transition the circle to its new location
 	d3.select(this)
-		.transition("moveing")
+		.transition("moving")
 		.duration(3000 + 4000*Math.random())
 		.ease("linear")
 		.attr("cy", newy)
 		.attr("cx", newx)
 		.each("end", pt.titleSlide.move);
+		
+
 
 }//move

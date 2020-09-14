@@ -6,6 +6,8 @@
  *
  * Adjusted by Nadieh Bremer
  *
+ * Adjusted by Scott Wolf
+ *
  */
 @import url(../lib/font/open-sans/open-sans.css);
 /*@import url(../lib/font/poiret-one/poiret-one.css);
@@ -19,9 +21,16 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
+
+ /* Fix for fullscreen blackout */
+ html:-webkit-full-screen-ancestor {
+  background-color: #fff;
+}
+
 body {
-  background: #fff;
-  background-color: #fff; }
+  background: #fff !important;
+  background-color: #fff; 
+  background-attachment: fixed;}
 
 .reveal {
   font-family: 'Open Sans', sans-serif;
@@ -296,3 +305,20 @@ body {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+  .credit  {
+    font-weight: 400;
+    text-transform: none;
+    text-align: center;
+    font-size: 24px !important;
+    font-family: 'Poiret One', cursive !important;
+    color: #676767 !important;
+  }
+body:fullscreen {
+  background: #fff;
+  background-color: #fff; 
+}
+body:-webkit-full-screen {
+  background: #fff;
+  background-color: #fff; 
+}
