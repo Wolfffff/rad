@@ -35,7 +35,7 @@ pt.legendCodeTwo.init = function() {
 	//Append defs container	
 	pt.legendCodeTwo.defs = svg.append("defs");
 
-	var colorsTwo = ["#73C4B7", "#1B779C"];
+	var colorsTwo = ["#bdc3c7", "#2c3e50"];
 
 	var linearGradient = pt.legendCodeTwo.defs
 		.append("linearGradient")

@@ -87,7 +87,7 @@ pt.starsHRDiagram.placeStars = function(stars) {
     	.attr("class", "credit")
         .attr("x", 0)
         .attr("y", height + 45)
-        .text("Data sampled from HYG database");
+        .text("Data sampled from HYG database - Visual from Nadieh Bremer");
 
 	///////////////////////////////////////////////////////////////////////////
 	////////////////////////// Create axis scales /////////////////////////////

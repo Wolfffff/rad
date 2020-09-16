@@ -248,10 +248,11 @@ pt.slideIdToFunctions = {
     },
     5: function() {
       pt.stretchedChord.step7();
-    },
-    6: function() {
-      pt.stretchedChord.batplot();
     }
+    // },
+    // 6: function() {
+    //   pt.stretchedChord.batplot();
+    // }
   },
   'stretched-chord-final': {
     'init': function() {

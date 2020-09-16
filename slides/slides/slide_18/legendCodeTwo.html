@@ -12,16 +12,30 @@
 
 <pre><code class="language-javascript" data-noescape data-trim>
 <span class="fragment" data-fragment-index="1">//Set the color for the start (0%)
-linearGradient.append("stop") 
-    .attr("offset", "0%")   
-    .attr("stop-color", "#ffa474") //light blue</span>
-
-<span class="fragment" data-fragment-index="2">//Set the color for the end (100%)
+defs = svg.append("defs");
+var colorsTwo = ["#bdc3c7", "#2c3e50"];
+var linearGradient = pt.legendCodeTwo.defs
+    .append("linearGradient")
+    .attr("id", "gradientTwo")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "100%") 
+    .attr("y2", "0%");                
 linearGradient.append("stop") 
     .attr("offset", "100%")   
-    .attr("stop-color", "#8b0000") //dark blue</span>
-
-<span class="fragment" data-fragment-index="3">d3.select("#legend-rectangle")
-    .style("fill", "url(#linear-gradient)")</span>
+    .attr("stop-color", colorsTwo[1]);
+<span class="fragment" data-fragment-index="2">
+linearGradient.append("stop") 
+    .attr("offset", "0%")   
+    .attr("stop-color", colorsTwo[0]);</span>
+<span class="fragment" data-fragment-index="3">
+var rectHeight = 35;
+svg.append("rect")
+    .attr("class", "exampleRect")
+    .attr("x", 0)
+    .attr("y", 70)
+    .attr("width", width)
+    .attr("height", rectHeight)
+    .style("fill", "url(#gradientTwo)");</span>
 </code></pre>
 </section>
