@@ -47,7 +47,7 @@ pt.fuzzyIntro.init = function() {
 
 	//Create dataset with random initial positions
 	var randStart = [],
-		numCircles = 50,
+		numCircles = 100,
 		radius = (hexHeight / numCircles)/2 * 0.98, //radius of each circle
 		maxMove = hexWidth/2 - radius; //maximum displacement
 
@@ -147,7 +147,7 @@ pt.fuzzyIntro.init = function() {
 		.attr("class", "hexagon")
 		.attr("d", "M" + (width/2) + "," + (height/2) + hexagonPath)
 		.style("stroke", "#bfbfbf")
-		.style("stroke-width", "7px")
+		.style("stroke-width", "1px")
 		.style("fill", "none");
 
 	///////////////////////////////////////////////////////////////////////////
