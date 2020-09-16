@@ -495,6 +495,11 @@ pt.slideIdToFunctions = {
     'init': function() {
       pt.endSlide.init();
     }
+  },
+  'weather-radial2': {
+    'init': function() {
+      pt.weatherRadial2.init();
+    }
   }
 };
 
