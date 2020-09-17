@@ -76,7 +76,7 @@ pt.collisionDetection.init = function() {
 	//////////////////////////// Set-up Force /////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////// 
 
-	let nodes = d3.range(200).map(function() { return { 
+	let nodes = d3.range(100).map(function() { return { 
         r: Math.random() * 30 + 8,
         x: -width/2 + width * Math.random(),
         y: -height/2 + height * Math.random()
@@ -98,7 +98,8 @@ pt.collisionDetection.init = function() {
             circleWrapper.selectAll("circle")
                 .attr("cx", d => d.x )
                 .attr("cy", d => d.y )
-        })
+		})
+		
 
  	///////////////////////////////////////////////////////////////////////////
 	//////////////////////////// Place circles ////////////////////////////////
@@ -128,7 +129,9 @@ pt.collisionDetection.init = function() {
 	  	root.fy = m[1]
 	  	pt.collisionDetection.simulation.alphaTarget(0.3).restart()
 	});
-
+	d3.selectAll("#collision-detection .blobCircles")
+	.transition().duration(1000)
+	.style("fill", function(d, i) { return colors[i % colors.length]; });
 }//init
 
 pt.collisionDetection.noGooey = function() {
@@ -142,7 +145,9 @@ pt.collisionDetection.gooey = function() {
     d3.select("#collision-detection .circleWrapper").style("filter", "url(#gooeyCollision)")
     
     pt.collisionDetection.simulation
-        .force("collide", d5.forceCollide().radius(d => d.r).strength(0.6))
+		.force("collide", d5.forceCollide().radius(d => d.r).strength(0.6))
+			var colors = ['#1B676B', '#519548', '#88C425', "#BEF202", "#EAFDE6"];
+
 }//gooey
 
 
@@ -152,12 +157,12 @@ pt.collisionDetection.gooey = function() {
 // 		.style("fill", "#1A818C");
 // }//oneColor
 
-// pt.collisionDetection.multiColor = function() {
-// 	var colors = ['#1B676B', '#519548', '#88C425', "#BEF202", "#EAFDE6"];
-// 	d3.selectAll("#collision-detection .blobCircles")
-// 		.transition().duration(1000)
-// 		.style("fill", function(d, i) { return colors[i % colors.length]; });
-// }//multiColor
+pt.collisionDetection.multiColor = function() {
+	var colors = ['#1B676B', '#519548', '#88C425', "#BEF202", "#EAFDE6"];
+	d3.selectAll("#collision-detection .blobCircles")
+		.transition().duration(1000)
+		.style("fill", function(d, i) { return colors[i % colors.length]; });
+}//multiColor
 
 
 
